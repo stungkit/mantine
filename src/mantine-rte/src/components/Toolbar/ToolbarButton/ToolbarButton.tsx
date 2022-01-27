@@ -1,8 +1,9 @@
 import React from 'react';
-import { ActionIcon, ActionIconProps } from '@mantine/core';
+import type { ActionIconProps } from '@mantine/core';
+import { ActionIcon } from '@mantine/core';
 import useStyles from './ToolbarButton.styles';
 
-interface ToolbarButtonProps extends ActionIconProps<'button'> {
+type ToolbarButtonProps = {
   /** Control icon */
   children: React.ReactNode;
 
@@ -14,7 +15,7 @@ interface ToolbarButtonProps extends ActionIconProps<'button'> {
 
   /** Disable active styles */
   noActive?: boolean;
-}
+} & ActionIconProps<'button'>;
 
 export function ToolbarButton({
   className,
