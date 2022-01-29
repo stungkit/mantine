@@ -1,5 +1,6 @@
-import React from 'react';
-import { render, act, RenderResult } from '@testing-library/react';
+import type React from 'react';
+import type { RenderResult } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 
 export async function renderWithAct(element: React.ReactElement) {
   let result: RenderResult;

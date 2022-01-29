@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { itSupportsClassName } from './it-supports-classname';
 import { itSupportsStyle } from './it-supports-style';
 import { itSupportsOthers } from './it-supports-others';
