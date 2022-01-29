@@ -6,7 +6,7 @@ export function useGuaranteedMemo<T>(fn: () => T, deps: React.DependencyList): T
   if (
     !ref.current ||
     deps.length !== ref.current.prevDeps.length ||
-    ref.current.prevDeps.map((v, i) => v === deps[i]).indexOf(false) >= 0
+    ref.current.prevDeps.map((v, i) => v === deps[i]).includes(false)
   ) {
     ref.current = {
       v: fn(),

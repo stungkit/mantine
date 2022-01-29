@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { ColorScheme } from './types';
+import type { ColorScheme } from './types';
 
 interface ColorSchemeContextProps {
   colorScheme: ColorScheme;

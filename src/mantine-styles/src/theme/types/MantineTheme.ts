@@ -2,8 +2,8 @@ import type { CSSProperties } from 'react';
 import type { MantineSizes, MantineSize, MantineNumberSize } from './MantineSize';
 import type { Tuple } from './Tuple';
 import type { DeepPartial } from './DeepPartial';
-import { CSSObject } from '../../tss';
-import { MantineColor } from './MantineColor';
+import type { CSSObject } from '../../tss';
+import type { MantineColor } from './MantineColor';
 
 export type LoaderType = 'bars' | 'oval' | 'dots';
 export type MantineThemeOther = Record<string, any>;

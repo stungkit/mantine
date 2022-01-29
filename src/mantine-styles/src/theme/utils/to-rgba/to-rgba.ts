@@ -17,7 +17,7 @@ function isHexColor(hex: string): boolean {
 function hexToRgba(color: string): RGBA {
   const replaced = color.replace('#', '');
 
-  const parsed = parseInt(replaced, 16);
+  const parsed = Number.parseInt(replaced, 16);
   const r = (parsed >> 16) & 255;
   const g = (parsed >> 8) & 255;
   const b = parsed & 255;
@@ -32,7 +32,7 @@ function hexToRgba(color: string): RGBA {
 
 function rgbStringToRgba(color: string): RGBA {
   const [r, g, b, a] = color
-    .replace(/[^0-9,.]/g, '')
+    .replace(/[^\d,.]/g, '')
     .split(',')
     .map(Number);
 

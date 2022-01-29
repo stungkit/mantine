@@ -1,4 +1,3 @@
-/* eslint-disable no-bitwise */
 import { toRgba } from '../../../utils/to-rgba/to-rgba';
 
 export function rgba(color: string, alpha: number) {

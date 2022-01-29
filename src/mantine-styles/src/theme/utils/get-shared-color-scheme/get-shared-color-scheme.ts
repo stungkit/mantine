@@ -1,4 +1,4 @@
-import { MantineTheme } from '../../types';
+import type { MantineTheme } from '../../types';
 
 interface GetSharedColorScheme {
   color?: string;

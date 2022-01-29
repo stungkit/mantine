@@ -1,5 +1,6 @@
 import React from 'react';
-import { Global as EmotionGlobal, css, CSSObject } from '@emotion/react';
+import type { CSSObject } from '@emotion/react';
+import { Global as EmotionGlobal, css } from '@emotion/react';
 import { useMantineTheme } from '../theme/MantineProvider';
 import type { MantineTheme } from '../theme/types';
 

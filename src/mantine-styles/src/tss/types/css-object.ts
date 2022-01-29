@@ -1,4 +1,4 @@
-import * as CSS from 'csstype';
+import type * as CSS from 'csstype';
 
 export interface CSSObject
   extends CSSPropertiesWithMultiValues,
@@ -12,7 +12,7 @@ export type CSSTssSpecials = {
 
 export type CSSProperties = CSS.PropertiesFallback<number | string>;
 export type CSSPropertiesWithMultiValues = {
-  [K in keyof CSSProperties]: CSSProperties[K] | Array<Extract<CSSProperties[K], string>>;
+  [K in keyof CSSProperties]: CSSProperties[K] | Extract<CSSProperties[K], string>[];
 };
 
 export type CSSPseudos = { [K in CSS.Pseudos]?: CSSObject };

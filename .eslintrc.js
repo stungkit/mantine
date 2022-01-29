@@ -15,5 +15,9 @@ module.exports = {
     '@typescript-eslint/no-redeclare': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+
+    '@typescript-eslint/no-dynamic-delete': 'off',
+    'unicorn/prefer-object-from-entries': 'off',
+    'unicorn/explicit-length-check': 'off',
   },
 };

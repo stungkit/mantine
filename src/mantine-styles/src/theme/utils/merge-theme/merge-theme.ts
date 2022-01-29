@@ -1,4 +1,4 @@
-import { MantineThemeOverride, MantineThemeBase, MantineTheme } from '../../types';
+import type { MantineThemeOverride, MantineThemeBase, MantineTheme } from '../../types';
 import { attachFunctions } from '../../functions/attach-functions';
 
 export function mergeTheme(
@@ -10,18 +10,20 @@ export function mergeTheme(
   }
 
   return attachFunctions(
-    // @ts-ignore
-    Object.keys(currentTheme).reduce((acc, key) => {
+    // @ts-expect-error
+    Object.keys(currentTheme).reduce<MantineThemeBase>((acc, key) => {
       if (key === 'headings' && themeOverride.headings) {
         const sizes = themeOverride.headings.sizes
-          ? Object.keys(currentTheme.headings.sizes).reduce((headingsAcc, h) => {
-              // eslint-disable-next-line no-param-reassign
-              headingsAcc[h] = {
-                ...currentTheme.headings.sizes[h],
-                ...themeOverride.headings.sizes[h],
-              };
-              return headingsAcc;
-            }, {} as MantineThemeBase['headings']['sizes'])
+          ? Object.keys(currentTheme.headings.sizes).reduce<MantineThemeBase['headings']['sizes']>(
+              (headingsAcc, h) => {
+                headingsAcc[h] = {
+                  ...currentTheme.headings.sizes[h],
+                  ...themeOverride.headings.sizes[h],
+                };
+                return headingsAcc;
+              },
+              {}
+            )
           : currentTheme.headings.sizes;
         return {
           ...acc,
@@ -38,6 +40,6 @@ export function mergeTheme(
           ? { ...currentTheme[key], ...themeOverride[key] }
           : themeOverride[key] || currentTheme[key];
       return acc;
-    }, {} as MantineThemeBase)
+    }, {})
   );
 }

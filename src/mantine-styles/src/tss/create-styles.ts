@@ -13,7 +13,7 @@ export interface UseStylesOptions<Key extends string> {
   name: string;
 }
 
-export function createStyles<Key extends string = string, Params = void>(
+export function createStyles<Key extends string = string, Params = unknown>(
   getCssObjectOrCssObject:
     | ((
         theme: MantineTheme,

@@ -1,4 +1,5 @@
-import createCache, { EmotionCache, Options } from '@emotion/cache';
+import type { EmotionCache, Options } from '@emotion/cache';
+import createCache from '@emotion/cache';
 import { useMantineEmotionOptions } from '../theme/MantineProvider';
 
 const defaultCacheOptions: Options = {

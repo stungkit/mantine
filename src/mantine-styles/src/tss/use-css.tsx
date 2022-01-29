@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import { serializeStyles, RegisteredCache } from '@emotion/serialize';
+import type { RegisteredCache } from '@emotion/serialize';
+import { serializeStyles } from '@emotion/serialize';
 import { insertStyles, getRegisteredStyles } from '@emotion/utils';
 import type { EmotionCache } from '@emotion/cache';
 import { useGuaranteedMemo } from './utils/use-guaranteed-memo/use-guaranteed-memo';
@@ -9,6 +10,7 @@ import { useEmotionCache } from './use-emotion-cache';
 const refPropertyName = 'ref' as const;
 
 function getRef(args: any[]) {
+  // eslint-disable-next-line prefer-const
   let ref: string;
 
   if (args.length !== 1) {
